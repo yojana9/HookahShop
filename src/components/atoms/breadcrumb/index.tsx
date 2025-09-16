@@ -26,7 +26,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
                 <span className="text-white font-semibold">{item.label}</span>
               )}
 
-              {!isLast && <ChevronRightIcon className="w-4 h-4 ml-2 mr-0.5 text-gray-300" />}
+              {!isLast && <ChevronRightIcon className="w-4 h-4 ml-2 mr-0.5 text-gray-500" />}
             </li>
           );
         })}

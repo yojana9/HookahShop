@@ -8,6 +8,8 @@ import Testimonials from "@/components/organisms/testimonials";
 import ProductPage from "./pages/ProductPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
+
 
 export default function App() {
   return (
@@ -58,6 +60,8 @@ export default function App() {
 
       {/* Signup Page */}
       <Route path="/signup" element={<SignupPage />} />
+
+      <Route path= "/cart" element={<CartPage />}/>
     </Routes>
   );
 }
