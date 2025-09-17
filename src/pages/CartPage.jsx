@@ -50,34 +50,30 @@ export default function CartPage() {
 
   return (
     <>
-      {/* Navbar */}
+      
       <Navbar />
 
-      {/* Breadcrumb */}
+  
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 mt-6">
-  <Breadcrumb
-    items={[
-      { 
-        label: <span className="text-gray-500">Home</span>, 
-        href: "/" 
-      },
-      { 
-        label: <span className="text-purple-900 font-semibold">Cart</span> 
-      },
-    ]}
-  />
-</div>
+        <Breadcrumb
+          items={[
+            {
+              label: <span className="text-gray-500">Home</span>,
+              href: "/",
+            },
+            {
+              label: <span className="text-purple-900 font-semibold">Cart</span>,
+            },
+          ]}
+        />
+      </div>
 
-
-      {/* Cart Section */}
       <section className="mx-auto px-4 sm:px-6 py-10" style={{ width: "1240px" }}>
-        {/* Title */}
-        <h1 className="text-[20px] tracking-wide font-bold text-neutral-800 mb-6 uppercase">
-          Your Cart
-        </h1>
+      
+        <Header text="Your Cart" size="medium" className="mb-6 uppercase" />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6">
-          {/* Cart Items */}
+          
           <div className="flex-1 border border-neutral-200 rounded-md bg-white">
             {cartItems.map((item, idx) => (
               <div
@@ -86,7 +82,7 @@ export default function CartPage() {
                   idx !== cartItems.length - 1 ? "border-b border-neutral-200" : ""
                 }`}
               >
-                {/* Left */}
+               
                 <div className="flex items-center gap-4">
                   <img
                     src={item.image}
@@ -94,12 +90,12 @@ export default function CartPage() {
                     className="w-[36px] h-[64px] object-contain"
                   />
                   <div className="leading-tight">
-                    <h2 className="font-semibold text-neutral-800 text-[13px]">
+                    <div className="font-semibold text-neutral-800 text-[13px]">
                       {item.name}
-                    </h2>
-                    <p className="text-[11px] text-neutral-500 mt-0.5">
+                    </div>
+                    <div className="text-[11px] text-neutral-500 mt-0.5">
                       Size: {item.size}, Brand: {item.brand}
-                    </p>
+                    </div>
                     {item.id === 1 && (
                       <span className="inline-block bg-green-100 text-purple-900 text-[10px] font-semibold px-2 py-0.5 rounded mt-1">
                         BEST SELLER
@@ -125,7 +121,7 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                {/* Right controls */}
+                
                 <div className="flex flex-col items-end gap-2">
                   <button
                     aria-label="Remove"
@@ -147,11 +143,11 @@ export default function CartPage() {
             ))}
           </div>
 
-          {/* Order Summary */}
+        
           <div className="w-full border border-neutral-200 rounded-md p-5 lg:p-6 h-fit">
-            <h2 className="font-semibold text-[14px] text-neutral-800 mb-4">
-              Order Summary
-            </h2>
+           
+            <Header text="Order Summary" size="small" className="mb-4" />
+
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-400">Subtotal</span>
@@ -173,7 +169,7 @@ export default function CartPage() {
               </div>
             </div>
 
-            {/* Promo Code */}
+          
             <div className="flex items-center gap-2 mt-5">
               <div className="relative w-full">
                 <img
@@ -192,7 +188,7 @@ export default function CartPage() {
               </button>
             </div>
 
-            {/* Checkout Button */}
+       
             <button className="mt-5 w-full px-6 py-3 bg-purple-900 text-white font-semibold rounded-full shadow hover:bg-purple-800">
               Checkout
             </button>
@@ -200,10 +196,9 @@ export default function CartPage() {
         </div>
       </section>
 
-      {/* Newsletter Banner */}
+     
       <NewsletterBanner />
 
-      {/* Footer */}
       <Footer />
     </>
   );

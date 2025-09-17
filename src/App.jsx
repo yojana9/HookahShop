@@ -9,7 +9,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
-
+import ShippingPage from "./pages/ShippingPage.jsx";
 
 export default function App() {
   return (
@@ -62,6 +62,11 @@ export default function App() {
       <Route path="/signup" element={<SignupPage />} />
 
       <Route path= "/cart" element={<CartPage />}/>
+
+      <Route path= "/Shipping" element={<ShippingPage />}>
+        
+      </Route>
+        
     </Routes>
   );
 }
