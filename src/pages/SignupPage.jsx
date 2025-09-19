@@ -20,9 +20,9 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="auth-screen flex flex-col lg:flex-row w-full min-h-screen">
+    <div className="auth-screen flex flex-col lg:flex-row w-full h-screen overflow-hidden">
 
-      <div className="w-full lg:w-1/2 h-64 lg:h-auto">
+      <div className="w-full lg:w-1/2 h-full">
         <img
           src="/rays.png"
           alt="Background"
@@ -31,7 +31,7 @@ export default function SignupPage() {
       </div>
 
    
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10">
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 overflow-y-auto">
         <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-full flex flex-col justify-center">
    
           <Header

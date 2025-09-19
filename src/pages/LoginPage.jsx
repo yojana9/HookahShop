@@ -12,11 +12,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="auth-screen min-h-screen flex flex-col bg-white">
+    <div className="auth-screen h-screen flex flex-col bg-white overflow-hidden">
       <Header />
 
-      <main className="flex flex-1 w-full min-h-screen flex-col lg:flex-row">
-        <div className="w-full lg:w-1/2 h-64 lg:h-auto">
+      <main className="flex flex-1 w-full h-full flex-col lg:flex-row overflow-hidden">
+        <div className="w-full lg:w-1/2 h-full">
           <img
             src="/rays.png"
             alt="Login Illustration"
@@ -24,7 +24,7 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10">
+        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 overflow-y-auto">
           <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-full flex flex-col justify-center">
             <Header text="WELCOME AGAIN" className="text-center mb-6" />
 

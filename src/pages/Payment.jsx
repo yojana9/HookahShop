@@ -70,7 +70,7 @@ export default function Payment() {
 
      
       <main className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3">
           
           <section className="lg:col-span-2">
        
@@ -128,7 +128,7 @@ export default function Payment() {
      
             <div className="mt-6 p-4">
               <Header text="Payment" size="small" className="mb-2" />
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 pr-19 text-sm leading-relaxed">
                 We currently only support cash and delivery. Confirm your
                 precious order and receive it within 1-2 days. Enjoy your little
                 treat!
@@ -159,7 +159,7 @@ export default function Payment() {
 
                 <button
                   type="submit"
-                  className="bg-purple-900 text-white py-2.5 px-19 rounded-full shadow hover:bg-purple-800 text-sm font-semibold"
+                  className="bg-purple-900 text-white py-2.5 px-19 rounded-full shadow hover:bg-purple-800 text-sm font-semibold mr-19"
                 >
                   CONFIRM
                 </button>
@@ -193,7 +193,7 @@ export default function Payment() {
 
        
           <div
-            className="space-y-6 border border-neutral-200 rounded-md p-4 sm:p-6 h-auto sticky top-10 self-start w-full lg:w-[450px]"
+            className="space-y-6 border border-neutral-200 -mt-35 rounded-md p-4 sm:p-6 h-auto sticky top-10 self-start w-full lg:w-[450px]"
           >
            
             <div className="space-y-4">
