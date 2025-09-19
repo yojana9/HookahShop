@@ -72,13 +72,13 @@ export default function ShippingPage() {
 
   return (
     <>
-      <div className="flex items-center pl-[200px] mt-9">
+      <div className="flex items-center px-4 sm:px-6 lg:pl-[200px] mt-6 sm:mt-9">
         <Logo
           href="/"
           imgSrc="/logo.png"
           size="xl"
           alt="EPIC"
-          className="h-10 w-auto"
+          className="h-8 sm:h-10 w-auto"
         />
       </div>
 
@@ -94,13 +94,13 @@ export default function ShippingPage() {
       </div>
 
       {/* Shipping Section */}
-      <section className="mx-auto px-4 sm:px-6 py-10" style={{ width: "1240px" }}>
+      <section className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <Header text="Shipping address" size="small" className="text-left mb-6" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[689px_505px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] xl:grid-cols-[689px_505px] gap-6">
           {/* Left: Shipping Form */}
           <div>
-            <div className="border border-neutral-200 rounded-md bg-white p-6 w-[689px] h-auto">
+            <div className="border border-neutral-200 rounded-md bg-white p-4 sm:p-6 w-full lg:w-[689px] h-auto">
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Form Fields */}
                 <input
@@ -113,7 +113,7 @@ export default function ShippingPage() {
                   required
                 />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="firstName"
@@ -153,7 +153,7 @@ export default function ShippingPage() {
                   className="w-full border border-gray-300 px-4 py-2 rounded-lg text-sm"
                 />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   <input
                     type="text"
                     name="city"
@@ -329,8 +329,7 @@ export default function ShippingPage() {
 
           {/* ✅ Right Column (Sticky) */}
           <div
-            className="space-y-6 border border-neutral-200 rounded-md -mt-55 p-5 lg:p-6 h-auto sticky top-10 self-start"
-            style={{ width: "505px" }}
+            className="space-y-6 border border-neutral-200 rounded-md p-4 sm:p-5 lg:p-6 h-auto sticky top-10 self-start w-full lg:w-[505px]"
           >
             {/* Cart Items */}
             <div className="space-y-4">

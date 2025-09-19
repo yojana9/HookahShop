@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "@/components/atoms/header"; 
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -19,9 +20,9 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="auth-screen flex flex-col md:flex-row w-full h-screen overflow-hidden">
-     
-      <div className="w-full md:w-1/2 h-full">
+    <div className="auth-screen flex flex-col lg:flex-row w-full min-h-screen">
+
+      <div className="w-full lg:w-1/2 h-64 lg:h-auto">
         <img
           src="/rays.png"
           alt="Background"
@@ -29,15 +30,17 @@ export default function SignupPage() {
         />
       </div>
 
-      <div className="w-full md:w-1/2 h-full flex items-center justify-center bg-white">
-        <div
-          style={{ width: "558.25px" }}
-          className="p-10 h-full flex flex-col justify-center"
-         
-        >
-         <h2 className="text-2xl font-bold text-center mb-6">SIGN UP NOW</h2>
+   
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10">
+        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-full flex flex-col justify-center">
+   
+          <Header
+            text="SIGN UP NOW"
+            size="medium"
+            className="text-center mb-6"
+          />
 
-      
+         
           <button
             type="button"
             className="w-full border border-gray-300 py-2 rounded-full flex items-center justify-center gap-2 mb-4 hover:shadow-md"
@@ -50,7 +53,6 @@ export default function SignupPage() {
             Continue with Google
           </button>
 
-         
           <div className="flex items-center my-4">
             <div className="flex-grow h-px bg-gray-300" />
             <span className="px-3 text-sm text-gray-500">OR</span>
@@ -58,21 +60,20 @@ export default function SignupPage() {
           </div>
 
           <form onSubmit={handleSignup} className="space-y-4">
-            
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="text"
                 placeholder="First name"
-                className="w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
               />
               <input
                 type="text"
                 placeholder="Last name"
-                className="w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
               />
             </div>
 
-      
+         
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email
@@ -93,7 +94,6 @@ export default function SignupPage() {
               )}
             </div>
 
-           
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Phone number
@@ -104,30 +104,30 @@ export default function SignupPage() {
               />
             </div>
 
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Date of birth
               </label>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   placeholder="Month"
-                  className="w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                  className="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
                 />
                 <input
                   type="text"
                   placeholder="Date"
-                  className="w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                  className="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
                 />
                 <input
                   type="text"
                   placeholder="Year"
-                  className="w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                  className="w-full sm:w-1/3 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
                 />
               </div>
             </div>
 
-            
             <div>
               <input
                 type="password"
@@ -139,6 +139,7 @@ export default function SignupPage() {
               </p>
             </div>
 
+           
             <div className="space-y-2 text-sm text-gray-600">
               <label className="flex items-start gap-2">
                 <input type="checkbox" className="mt-1" />
@@ -171,7 +172,10 @@ export default function SignupPage() {
           
           <p className="mt-6 text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <Link to="/login" className="text-purple-700 font-medium hover:underline">
+            <Link
+              to="/login"
+              className="text-purple-700 font-medium hover:underline"
+            >
               Login
             </Link>
           </p>

@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import ShippingPage from "./pages/ShippingPage.jsx";
+import PaymentPage from "./pages/Payment.jsx";
 
 export default function App() {
   return (
@@ -30,19 +31,19 @@ export default function App() {
                 onCtaClick={() => console.log("Order Now clicked")}
               />
 
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <ProductCard />
               </div>
 
               <section className="bg-white border-t">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                   <Testimonials />
                 </div>
               </section>
             </main>
 
             <section className="bg-white border-t">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <Newsletter />
               </div>
             </section>
@@ -52,21 +53,13 @@ export default function App() {
         }
       />
 
-      {/* Product Page */}
+      {/* Other pages */}
       <Route path="/product" element={<ProductPage />} />
-
-      {/* Login Page */}
       <Route path="/login" element={<LoginPage />} />
-
-      {/* Signup Page */}
       <Route path="/signup" element={<SignupPage />} />
-
-      <Route path= "/cart" element={<CartPage />}/>
-
-      <Route path= "/Shipping" element={<ShippingPage />}>
-        
-      </Route>
-        
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/shipping" element={<ShippingPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
     </Routes>
   );
 }

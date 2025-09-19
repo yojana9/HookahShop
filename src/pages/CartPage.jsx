@@ -68,13 +68,13 @@ export default function CartPage() {
         />
       </div>
 
-      <section className="mx-auto px-4 sm:px-6 py-10" style={{ width: "1240px" }}>
+      <section className="mx-auto w-full max-w-[1240px] px-4 sm:px-6 py-6 sm:py-8 lg:py-10">
       
         <Header text="Your Cart" size="medium" className="mb-6 uppercase" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-4 sm:gap-6">
           
-          <div className="flex-1 border border-neutral-200 rounded-md bg-white">
+           <div className="flex-1 border border-neutral-200 rounded-md bg-white overflow-hidden">
             {cartItems.map((item, idx) => (
               <div
                 key={item.id}
@@ -87,7 +87,7 @@ export default function CartPage() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-[36px] h-[64px] object-contain"
+                     className="w-12 h-16 sm:w-[36px] sm:h-[64px] object-contain"
                   />
                   <div className="leading-tight">
                     <div className="font-semibold text-neutral-800 text-[13px]">
@@ -122,7 +122,7 @@ export default function CartPage() {
                 </div>
 
                 
-                <div className="flex flex-col items-end gap-2">
+                 <div className="flex flex-col items-end gap-1 sm:gap-2">
                   <button
                     aria-label="Remove"
                     className="w-7 h-7 grid place-items-center text-neutral-500"
@@ -133,10 +133,10 @@ export default function CartPage() {
                       className="w-4 h-4 object-contain"
                     />
                   </button>
-                  <div className="flex items-center h-8 rounded-full bg-gray-100 text-neutral-700 text-sm">
-                    <button className="w-8 h-7 grid place-items-center">-</button>
-                    <span className="px-1">{item.qty}</span>
-                    <button className="w-8 h-7 grid place-items-center">+</button>
+                   <div className="flex items-center h-8 rounded-full bg-gray-100 text-neutral-700 text-sm">
+                     <button className="w-8 h-8 grid place-items-center">-</button>
+                     <span className="px-2">{item.qty}</span>
+                     <button className="w-8 h-8 grid place-items-center">+</button>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function CartPage() {
           </div>
 
         
-          <div className="w-full border border-neutral-200 rounded-md p-5 lg:p-6 h-fit">
+           <div className="w-full border border-neutral-200 rounded-md p-4 sm:p-5 lg:p-6 h-fit">
            
             <Header text="Order Summary" size="small" className="mb-4" />
 
@@ -170,7 +170,7 @@ export default function CartPage() {
             </div>
 
           
-            <div className="flex items-center gap-2 mt-5">
+             <div className="flex items-center gap-2 mt-4 sm:mt-5">
               <div className="relative w-full">
                 <img
                   src="/tag.png"
@@ -183,13 +183,13 @@ export default function CartPage() {
                   className="w-full pl-10 pr-4 py-2 text-sm bg-gray-100 text-gray-700 placeholder-gray-400 rounded-full focus:outline-none"
                 />
               </div>
-              <button className="px-5 py-2 border border-purple-900 text-purple-900 rounded-full font-semibold text-xs uppercase">
+               <button className="px-4 sm:px-5 py-2 border border-purple-900 text-purple-900 rounded-full font-semibold text-xs uppercase">
                 Apply
               </button>
             </div>
 
        
-            <button className="mt-5 w-full px-6 py-3 bg-purple-900 text-white font-semibold rounded-full shadow hover:bg-purple-800">
+             <button className="mt-4 sm:mt-5 w-full px-5 sm:px-6 py-3 bg-purple-900 text-white font-semibold rounded-full shadow hover:bg-purple-800">
               Checkout
             </button>
           </div>
