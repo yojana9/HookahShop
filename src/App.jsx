@@ -11,6 +11,7 @@ import SignupPage from "./pages/SignupPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import ShippingPage from "./pages/ShippingPage.jsx";
 import PaymentPage from "./pages/Payment.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
@@ -60,6 +61,7 @@ export default function App() {
       <Route path="/cart" element={<CartPage />} />
       <Route path="/shipping" element={<ShippingPage />} />
       <Route path="/payment" element={<PaymentPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

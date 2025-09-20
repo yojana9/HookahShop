@@ -102,7 +102,7 @@ export default function HeroSection({
 
       {/* content */}
       <div className="relative z-10 h-full flex items-start">
-        <div className="max-w-3xl px-6 sm:px-10 md:px-16 lg:px-20 py-16 flex flex-col justify-start h-full">
+        <div className="max-w-3xl px-6 sm:px-10 md:px-16 lg:px-40 py-16 flex flex-col justify-start h-full">
           <div className="flex flex-col justify-start mt-[15%] sm:mt-[18%] md:mt-[22%] lg:mt-[28%]">
             <MotionHeader
               items={subItems}

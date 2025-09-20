@@ -7,16 +7,19 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-  
     navigate("/");
   };
 
   return (
     <div className="auth-screen h-screen flex flex-col bg-white overflow-hidden">
+      {/* Header stays fixed height */}
       <Header />
 
-      <main className="flex flex-1 w-full h-full flex-col lg:flex-row overflow-hidden">
-        <div className="w-full lg:w-1/2 h-full">
+      {/* ✅ Fill remaining height without scroll */}
+      <main className="flex flex-1 w-full flex-col lg:flex-row h-[calc(100vh-80px)]">
+        
+        {/* ✅ Hide image on mobile, show full height on laptop */}
+        <div className="hidden lg:block lg:w-1/2 h-full">
           <img
             src="/rays.png"
             alt="Login Illustration"
@@ -24,8 +27,9 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 overflow-y-auto">
-          <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-full flex flex-col justify-center">
+        {/* ✅ Form column fills height */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 h-full">
+          <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl flex flex-col justify-center">
             <Header text="WELCOME AGAIN" className="text-center mb-6" />
 
             <button
@@ -55,7 +59,7 @@ export default function LoginPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 text-base"
                   placeholder="example@example.com"
                   required
                 />
@@ -67,7 +71,7 @@ export default function LoginPage() {
                 </label>
                 <input
                   type="password"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 text-base"
                   placeholder="Enter your password"
                   required
                 />
@@ -78,14 +82,17 @@ export default function LoginPage() {
                   <input type="checkbox" className="mr-2" />
                   Remember me
                 </label>
-                <Link to="/forgot-password" className="text-gray-600 hover:underline">
+                <Link
+                  to="/forgot-password"
+                  className="text-gray-600 hover:underline"
+                >
                   Forgot Password
                 </Link>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-purple-800 text-white py-2 rounded-full hover:bg-purple-900 transition"
+                className="w-full bg-purple-800 text-white py-3 rounded-full hover:bg-purple-900 transition text-base font-medium"
               >
                 LOG IN
               </button>
@@ -93,7 +100,10 @@ export default function LoginPage() {
 
             <p className="mt-6 text-center text-sm text-gray-600">
               Don’t have an account?{" "}
-              <Link to="/signup" className="text-purple-700 font-medium hover:underline">
+              <Link
+                to="/signup"
+                className="text-purple-700 font-medium hover:underline"
+              >
                 Sign Up
               </Link>
             </p>

@@ -20,9 +20,10 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="auth-screen flex flex-col lg:flex-row w-full h-screen overflow-hidden">
-
-      <div className="w-full lg:w-1/2 h-full">
+    // ✅ Allow page to grow on mobile; lock to screen only on lg+
+    <div className="auth-screen min-h-screen lg:h-screen flex flex-col lg:flex-row w-full lg:overflow-hidden">
+      {/* ✅ Image hidden on mobile, full height on laptop */}
+      <div className="hidden lg:block lg:w-1/2 h-full">
         <img
           src="/rays.png"
           alt="Background"
@@ -30,17 +31,16 @@ export default function SignupPage() {
         />
       </div>
 
-   
-      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 overflow-y-auto">
-        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-full flex flex-col justify-center">
-   
+      {/* ✅ Right column: scrollable on mobile, fixed on laptop */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 lg:p-10 h-auto lg:h-full overflow-y-auto lg:overflow-hidden overscroll-contain">
+        {/* add bottom padding on mobile so last fields aren’t hidden behind browser bars */}
+        <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl flex flex-col justify-center py-6 lg:py-0 pb-24 lg:pb-0">
           <Header
             text="SIGN UP NOW"
             size="medium"
             className="text-center mb-6"
           />
 
-         
           <button
             type="button"
             className="w-full border border-gray-300 py-2 rounded-full flex items-center justify-center gap-2 mb-4 hover:shadow-md"
@@ -64,16 +64,15 @@ export default function SignupPage() {
               <input
                 type="text"
                 placeholder="First name"
-                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                className="w-full sm:w-1/2 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black text-base"
               />
               <input
                 type="text"
                 placeholder="Last name"
-                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black"
+                className="w-full sm:w-1/2 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-black text-base"
               />
             </div>
 
-         
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email
@@ -83,11 +82,11 @@ export default function SignupPage() {
                 placeholder="example@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`w-full px-4 py-2 border ${
+                className={`w-full px-4 py-3 border ${
                   emailError
                     ? "border-red-500 focus:ring-red-500"
                     : "border-gray-300 focus:ring-purple-600"
-                } rounded-full focus:outline-none focus:ring-2 placeholder-black`}
+                } rounded-full focus:outline-none focus:ring-2 placeholder-black text-base`}
               />
               {emailError && (
                 <p className="text-sm text-red-600 mt-1">{emailError}</p>
@@ -104,7 +103,6 @@ export default function SignupPage() {
               />
             </div>
 
-            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Date of birth
@@ -139,7 +137,6 @@ export default function SignupPage() {
               </p>
             </div>
 
-           
             <div className="space-y-2 text-sm text-gray-600">
               <label className="flex items-start gap-2">
                 <input type="checkbox" className="mt-1" />
@@ -160,22 +157,17 @@ export default function SignupPage() {
               </label>
             </div>
 
-          
             <button
               type="submit"
-              className="w-full bg-purple-800 text-white py-2 rounded-full hover:bg-purple-900 transition"
+              className="w-full bg-purple-800 text-white py-3 rounded-full hover:bg-purple-900 transition text-base font-medium"
             >
               SIGN UP
             </button>
           </form>
 
-          
           <p className="mt-6 text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <Link
-              to="/login"
-              className="text-purple-700 font-medium hover:underline"
-            >
+            <Link to="/login" className="text-purple-700 font-medium hover:underline">
               Login
             </Link>
           </p>
